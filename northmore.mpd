@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<MPD
+    type="dynamic"
+    xmlns="urn:mpeg:dash:schema:mpd:2011"
+    availabilityStartTime="2021-02-06T13:32:36Z"
+    publishTime="2021-02-06T13:32:36Z"
+    minimumUpdatePeriod="PT9.066S"
+    minBufferTime="PT5.000S"
+    timeShiftBufferDepth="P0Y00M00DT0H00M41.466S"
+    suggestedPresentationDelay="PT19.132S"
+    profiles="urn:hbbtv:dash:profile:isoff-live:2012,urn:mpeg:dash:profile:isoff-live:2011"
+    xmlns:xsi="http://www.w3.org/2011/XMLSchema-instance"
+    xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011 DASH-MPD.xsd">
+  <Period start="PT0S" id="dash">
+    <AdaptationSet
+        id="1"
+        startWithSAP="1"
+        segmentAlignment="true"
+        maxWidth="720"
+        maxHeight="576"
+        maxFrameRate="30"
+        par="5:4">
+      <Representation
+          id="stream_H264"
+          mimeType="video/mp4"
+          codecs="avc1.64001f"
+          width="720"
+          height="576"
+          frameRate="30"
+          sar="1:1"
+          bandwidth="768000">
+        <SegmentTemplate
+            presentationTimeOffset="0"
+            timescale="1000"
+            media="stream-$Time$.m4v"
+            initialization="stream-init.m4v">
+          <SegmentTimeline>
+             <S t="54250966" d="6466"/>
+             <S t="54257432" d="6067"/>
+             <S t="54263499" d="6233"/>
+             <S t="54269732" d="6134"/>
+             <S t="54275866" d="7500"/>
+             <S t="54283366" d="9066"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet
+        id="2"
+        startWithSAP="1"
+        segmentAlignment="true">
+      <AudioChannelConfiguration
+          schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011"
+          value="1"/>
+      <Representation
+          id="stream_AAC"
+          mimeType="audio/mp4"
+          codecs="mp4a.40.2"
+          audioSamplingRate="44100"
+          bandwidth="96000">
+        <SegmentTemplate
+            presentationTimeOffset="0"
+            timescale="1000"
+            media="stream-$Time$.m4a"
+            initialization="stream-init.m4a">
+          <SegmentTimeline>
+             <S t="54250966" d="6466"/>
+             <S t="54257432" d="6067"/>
+             <S t="54263499" d="6233"/>
+             <S t="54269732" d="6134"/>
+             <S t="54275866" d="7500"/>
+             <S t="54283366" d="9066"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>
